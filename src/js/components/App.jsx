@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import '../../scss/style.scss';
-
+import '../store/counter.jsx';
 
 var app = document.getElementById('app');
 
