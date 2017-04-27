@@ -23,10 +23,9 @@ export default class App extends React.Component {
     return (
     	<div>
         <Header/>
-        <div className="heading"> Hello, World !</div>
         <p>It is {new Date().toLocaleTimeString()}.</p>
-        <input type="text" onChange={this.update.bind(this)} />
         <div>{this.state.txt}</div>
+        <input type="text" onChange={this.update.bind(this)} />
         <Footer/>
       </div>
     );
