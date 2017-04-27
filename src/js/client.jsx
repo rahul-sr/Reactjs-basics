@@ -16,6 +16,7 @@ ReactDOM.render(
   <HashRouter>
       <div>
         <Route path="/" component={App} />
+        <Route path="/header" component={Header} />
       </div>
    </HashRouter >,app);
 
