@@ -5,9 +5,9 @@ const PRODUCTION = process.env.NODE_ENV === 'production';
 
 
 const entry = PRODUCTION ? [
-    './src/js/components/App.jsx',
+    './src/js/client.jsx',
 ] : [
-    './src/js/components/App.jsx',
+    './src/js/client.jsx',
     'webpack/hot/dev-server',
     'webpack-dev-server/client?http://localhost:8080'
 ];

@@ -7,7 +7,7 @@ import '../../scss/style.scss';
 
 var app = document.getElementById('app');
 
-class App extends React.Component {
+export default class App extends React.Component {
   render () {
     return (
     	<div>
@@ -20,12 +20,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <App name="React"/>,
-  app
-);
 
-
-if(module.hot){
-	module.hot.accept();
-}
