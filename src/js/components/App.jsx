@@ -12,7 +12,7 @@ export default class App extends React.Component {
     return (
     	<div>
         <Header/>
-        <div className="heading"> Hello, {this.props.name} !</div>
+        <div className="heading"> Hello, World !</div>
         <p>It is {new Date().toLocaleTimeString()}.</p>
         <Footer/>
       </div>

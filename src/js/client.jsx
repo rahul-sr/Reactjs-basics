@@ -15,7 +15,7 @@ var app = document.getElementById('app');
 ReactDOM.render(
   <HashRouter>
       <div>
-        <Route path="/article" component={App} />
+        <Route path="/" component={App} />
       </div>
    </HashRouter >,app);
 
