@@ -1,6 +1,7 @@
 import { createStore } from 'redux';
-
-function counter(state = 0, action) {
+import React from 'react';
+import ReactDOM from 'react-dom';
+const counter = (state = 0, action) => {
   switch (action.type) {
   case 'INCREMENT':
     return state + 1
@@ -18,10 +19,6 @@ let store = createStore(counter);
 // Normally you'd use a view binding library (e.g. React Redux) rather than subscribe() directly.
 // However it can also be handy to persist the current state in the localStorage.
 
-store.subscribe(() =>
-  console.log(store.getState())
-);
-
 // The only way to mutate the internal state is to dispatch an action.
 // The actions can be serialized, logged or stored and later replayed.
 store.dispatch({ type: 'INCREMENT' });
@@ -30,3 +27,26 @@ store.dispatch({ type: 'INCREMENT' });
 // 2
 store.dispatch({ type: 'INCREMENT' });
 // 1
+
+const Counter = ({
+	value,
+	onIncrement,
+	onDecrement
+}) => (
+	<div>
+		<h1>{value}</h1>
+		<button onClick={onIncrement}>+</button>
+		<button onClick={onDecrement}>-</button>
+	</div>
+);
+
+const render = () => {
+	ReactDOM.render(
+		<Counter value={store.getState()}
+		onIncrement={() => store.dispatch({ type: 'INCREMENT' }) }
+		onDecrement={() => store.dispatch({ type: 'DECREMENT' }) } />,
+		document.getElementById('root')
+		)
+}
+render();
+store.subscribe(render);

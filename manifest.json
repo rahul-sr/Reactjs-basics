@@ -1,0 +1,50 @@
+{
+  "name": "Sand Watch",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Sand Watch timer",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "browser_action": {
+    "default_icon": "icons/icon19.png",
+    "default_title": "Sand Watch timer",
+    "default_popup": "src/page_action/page_action.html"
+  },
+  "permissions": [
+    "bookmarks",
+    "clipboardRead",
+    "clipboardWrite",
+    "contentSettings",
+    "cookies",
+    "tts",
+    "ttsEngine",
+    "history",
+    "notifications",
+    "geolocation",
+    "http://google.com/"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.google.com/*"
+      ],
+      "css": [
+        "src/inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://www.google.com/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ],
+  "content_security_policy": "default-src 'self'; script-src 'self' http://localhost:8080 https://localhost:8080 'unsafe-eval'; connect-src http://localhost:8080/ ws://localhost:8080; style-src * 'unsafe-inline' 'self' blob:; img-src 'self' data:;"
+}
