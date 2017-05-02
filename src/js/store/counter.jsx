@@ -13,6 +13,23 @@ const counter = (state = 0, action) => {
 }
 
 
+class ShoppingList extends React.Component {
+	constructor() {
+	    super();
+	    this.state = {
+	      squares: Array(9).fill(null),
+	    };
+	}
+	render(props){
+		console.log(props);
+		return(
+			<button className="square" onClick={() => this.setState({value: 'X'})}>
+			  {this.state.value}
+			</button>
+			);
+	}
+}
+
 
 let store = createStore(counter);
 // You can use subscribe() to update the UI in response to state changes.
@@ -42,10 +59,12 @@ const Counter = ({
 
 const render = () => {
 	ReactDOM.render(
+		<div>
 		<Counter value={store.getState()}
 		onIncrement={() => store.dispatch({ type: 'INCREMENT' }) }
-		onDecrement={() => store.dispatch({ type: 'DECREMENT' }) } />,
-		document.getElementById('root')
+		onDecrement={() => store.dispatch({ type: 'DECREMENT' }) } />
+		</div>,
+		document.getElementById('abc')
 		)
 }
 render();

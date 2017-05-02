@@ -5,7 +5,7 @@ import Header from './components/Header.jsx';
 import Home from './components/Home.jsx';
 import Form from './components/Form.jsx';
 import Todo from './components/Todo.jsx';
-import './store/counter.jsx';
+
 
 var app = document.getElementById('app');
 
